@@ -102,12 +102,12 @@ const HomeNavbar = () => {
             </Nav.Link>
             <Nav.Link
               as={Link}
-              to="/courses"
+              to="/Course"
               className="px-3"
-              onClick={() => handleSelect("/courses")}
+              onClick={() => handleSelect("/Course")}
             >
               <span
-                className={`nav-link-custom ${activeLink === "/courses" ? "active" : ""
+                className={`nav-link-custom ${activeLink === "/Course" ? "active" : ""
                   }`}
               >
                 Courses

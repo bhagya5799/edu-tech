@@ -4,10 +4,11 @@ import UICourseCard from "../../components/UICourseCard/UICourseCard";
 import { courses } from "./courseItems";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import Roadmap from "../curriculum/roadmap";
 
 const Courses = ({ limit }) => {
   const navigate = useNavigate();
- 
+
   const displayedCourses = limit ? courses.slice(0, limit) : courses;
 
   return (
@@ -22,6 +23,7 @@ const Courses = ({ limit }) => {
         >
           Our Courses
         </motion.h2>
+        <Roadmap/>
         <motion.p
           className="text-secondary"
           initial={{ opacity: 0, y: -20 }}
@@ -33,6 +35,7 @@ const Courses = ({ limit }) => {
         </motion.p>
       </header>
       <Container>
+        
         <Row xs={1} md={2} lg={3} className="g-4">
           {displayedCourses.map((course, index) => (
             <Col key={course.id}>
@@ -46,6 +49,7 @@ const Courses = ({ limit }) => {
             </Col>
           ))}
         </Row>
+
         <div className="d-flex align-items-center justify-content-center my-4">
           {limit === 3 && (
             <Button
@@ -58,6 +62,7 @@ const Courses = ({ limit }) => {
             </Button>
           )}
         </div>
+
       </Container>
     </div>
   );
